@@ -87,3 +87,8 @@ The goal of this project is to analyze historical e-commerce data to uncover tre
 ### Customer Segmentation
 - Performed customer segmentation to identify groups based on preferences, behavior, or demographics.
 - Discovered which segments show the most interest in specific products or categories.
+
+
+## Link to Dashboard
+Explore the full interactive dashboard [here](https://app.powerbi.com/view?r=eyJrIjoiYWIzMGE0NTItMTkxMy00MzhkLWJmNWItMzhmNzI2MTg1OTdhIiwidCI6IjUxN2QzNTAyLTI5MDEtNGRlMi1hODdiLTk1YzUwN2E5YTA4OCJ9)
+
