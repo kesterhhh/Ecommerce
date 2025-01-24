@@ -90,5 +90,5 @@ The goal of this project is to analyze historical e-commerce data to uncover tre
 
 
 ## Link to Dashboard
-Explore the full interactive dashboard [here](https://app.powerbi.com/view?r=eyJrIjoiYWIzMGE0NTItMTkxMy00MzhkLWJmNWItMzhmNzI2MTg1OTdhIiwidCI6IjUxN2QzNTAyLTI5MDEtNGRlMi1hODdiLTk1YzUwN2E5YTA4OCJ9)
+Explore the full interactive dashboard [here](https://app.powerbi.com/view?r=eyJrIjoiYWM1ZjJjN2MtOGUxNi00MDk1LWFlNjUtMWYwNTJjMmIwMGZkIiwidCI6IjUxN2QzNTAyLTI5MDEtNGRlMi1hODdiLTk1YzUwN2E5YTA4OCJ9)
 
