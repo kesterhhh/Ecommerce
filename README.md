@@ -1,113 +1,122 @@
 ---
 
-# E-commerce Data Analysis Project
+# **E-commerce Data Analysis Project**
 
-## Objective
-The goal of this project is to analyze historical e-commerce data to uncover trends and provide actionable insights that will improve sales, customer retention, and operational efficiency.
-
----
-
-## Problems Identified
-- Analyzing historical sales trends and identifying top-performing product categories.
-- Understanding customer retention rates and recognizing returning customers.
-- Pinpointing regions with high and low sales performance and investigating the reasons behind these differences.
-- Evaluating the impact of delivery status on sales and customer satisfaction.
-- Exploring how shipping options affect delivery performance and customer experience.
-- Segmenting customers to identify patterns in preferences, behavior, or demographics.
+## **Overview**
+This project provides an in-depth analysis of an e-commerce dataset aimed at uncovering actionable insights to enhance business performance, optimize customer retention, and streamline operational efficiency. The primary goal is to leverage data visualization and analysis to assist e-commerce management teams in making data-driven decisions that improve sales, customer satisfaction, and overall business performance.
 
 ---
 
-## Target Audience
+## **Project Objective**
+To analyze historical e-commerce data and extract key insights that:
+- Identify sales trends and top-performing product categories.
+- Evaluate customer retention rates and segmentation.
+- Investigate regional sales performance.
+- Assess the impact of delivery and shipping on sales and customer satisfaction.
+
+---
+
+## **Problem Statements**
+The following business challenges are addressed in this analysis:
+- **Sales Trends**: Track historical sales patterns and identify top-performing product categories.
+- **Customer Retention**: Evaluate retention rates and understand factors that contribute to customer loyalty.
+- **Regional Sales Performance**: Pinpoint regions with strong and weak sales, and investigate underlying causes.
+- **Delivery & Shipping**: Assess the role of delivery status and shipping methods on sales and customer satisfaction.
+- **Customer Segmentation**: Segment customers based on behavior, demographics, and preferences to design targeted marketing strategies.
+
+---
+
+## **Target Audience**
 - **Primary Users**: E-commerce management, marketing, and operations teams.
-- **Secondary Users**: Data analysts, business analysts, and stakeholders focused on sales performance and customer behavior.
+- **Secondary Users**: Data analysts, business analysts, stakeholders involved in sales performance, and customer behavior.
 
 ---
 
-## Use Cases
-### Sales Trends Analysis
-- **User Story**: As a sales manager, I want to track historical sales trends to plan inventory and optimize future sales campaigns.
-- **Acceptance Criteria**: The dashboard should show monthly, seasonal, and annual trends by category with filtering capabilities.
-- **Benefits**: Improved forecasting and inventory management.
+## **Use Cases**
+### 1. **Sales Trends Analysis**
+- **User Story**: As a sales manager, I want to track historical sales trends by product category, so I can optimize future sales campaigns and inventory.
+- **Acceptance Criteria**: The dashboard must display sales trends over monthly, seasonal, and annual periods, with filtering capabilities by category.
+- **Benefits**: Better inventory management and sales forecasting.
 
-### Customer Retention and Loyalty
-- **User Story**: As a marketing analyst, I want insights on returning customers to design loyalty programs and targeted campaigns.
-- **Acceptance Criteria**: The dashboard must display customer retention rates and trends over time.
-- **Benefits**: Enhanced marketing ROI and customer loyalty.
+### 2. **Customer Retention and Loyalty**
+- **User Story**: As a marketing analyst, I want to analyze customer retention and loyalty trends, so I can design targeted campaigns for improving customer retention.
+- **Acceptance Criteria**: The dashboard must show retention rates and trends over time, with segmentation by customer type.
+- **Benefits**: Improved customer loyalty and targeted marketing strategies.
 
-### Regional Performance Evaluation
-- **User Story**: As an operations manager, I need to assess regional sales performance to allocate resources efficiently.
-- **Acceptance Criteria**: The dashboard highlights sales and delivery performance by region.
-- **Benefits**: Optimized regional operations and logistics.
-
----
-
-## Success Criteria
-- Clear identification of sales trends and product performance.
-- Insights into customer retention rates and behaviors.
-- Comprehensive regional performance analysis.
-- Assessment of delivery and shipping efficiency.
-- Effective segmentation of customers for targeted strategies.
+### 3. **Regional Sales Evaluation**
+- **User Story**: As an operations manager, I need to assess regional sales performance to allocate resources effectively and identify areas for operational improvement.
+- **Acceptance Criteria**: The dashboard should display sales performance by region, highlighting areas of strong and weak performance.
+- **Benefits**: Optimized resource allocation and targeted operational interventions.
 
 ---
 
-## Data Needed
-- **Fields**: customer_id, customer_full_name, category_name, product_name, customer_segment, customer_city, customer_state, customer_country, customer_region, delivery_status, order_date, order_id, ship_date, shipping_type, order_item_discount, sales_per_order, order_quantity, profit_per_order.
+## **Success Criteria**
+- Clear identification of sales trends and top-performing categories.
+- Insights into customer retention, churn rates, and loyalty trends.
+- Comprehensive regional performance insights.
+- Evaluation of delivery performance's impact on sales and customer satisfaction.
+- Actionable customer segmentation insights.
 
 ---
 
-## Steps Taken in Power Query
-1. **Concatenation**: Created a composite key for unique identification:
-   ```m
-   [customer_full_name] & "_" & [category_name] & "_" & [product_name] & "_" & [customer_segment] & "_" & [customer_city] & "_" & [customer_state]
-   ```
-2. **Grouping**: Grouped data by the composite key to resolve ID clashes.
-3. **Unique Identifier**: Generated unique IDs using:
-   ```m
-   "C_ID_" & Number.ToText(Number.RoundDown(Number.RandomBetween(100000, 999999)))
-   ```
-4. **Expansion**: Expanded grouped data for detailed analysis.
+## **Data Requirements**
+To perform the analysis, the dataset includes the following key fields:
+- **Customer Data**: Customer ID, name, segment, city, state, country, region.
+- **Order Data**: Order ID, product category, sales per order, order quantity, profit per order, order date.
+- **Delivery Data**: Delivery status, shipping type, ship date.
 
 ---
 
-## Key Findings
-### Sales Trends
-- Sales reached $25.23 million, with top-performing categories being office supplies (60.14%), furniture (21.63%), and technology (18.23%).
-- Seasonal trends reveal potential peak periods to optimize inventory and marketing efforts.
+## **Key Findings**
+### 1. **Sales Trends**
+- **Total Sales**: $25.23 million, with top-performing categories: Office Supplies (60.14%), Furniture (21.63%), and Technology (18.23%).
+- **Seasonal Patterns**: Identified peak sales periods to optimize inventory and marketing strategies.
 
-### Customer Retention
-- Customer retention is at 14.27%, with a clear opportunity to improve through loyalty programs and personalized campaigns.
+### 2. **Customer Retention**
+- Customer retention stands at 14.27%. There is potential to improve retention through targeted loyalty programs and campaigns.
 
-### Regional Performance
-- Central and East regions show the highest on-time delivery rates, with tight competition between them. These regions also have consistent sales performance, indicating reliable operations.
+### 3. **Regional Performance**
+- The Central and East regions have the highest on-time delivery rates, correlating with strong and consistent sales performance in these areas.
 
-### Delivery and Sales
-- Delivery delays significantly impact customer satisfaction and sales, emphasizing the need for better logistics.
+### 4. **Delivery & Shipping**
+- Delivery delays significantly impact sales and customer satisfaction. The need for enhanced logistics is evident.
+- Standard shipping remains dominant, but expedited and same-day shipping options could improve customer experience.
 
-### Shipping and Delivery
-- Standard shipping dominates but shows room for improvement in speed and reliability. Expedited and same-day shipping could enhance the customer experience.
-
-### Customer Segmentation
-- Consumers account for 51.75% of sales, followed by corporate customers at 30.32%. These segments can be leveraged for targeted campaigns.
+### 5. **Customer Segmentation**
+- **Consumers** account for 51.75% of total sales, followed by **Corporate Customers** at 30.32%. Tailored marketing efforts can leverage these segments for growth.
 
 ---
 
-## Recommendations
-1. **Improve Customer Retention**: Implement loyalty programs and targeted campaigns for returning customers to boost retention from the current 14.27%.
-2. **Optimize Delivery Performance**: Focus on enhancing delivery efficiency in lagging regions to match Central and East's success.
-3. **Expand Product Marketing**: Promote high-demand categories (office supplies) while exploring growth in furniture and technology.
-4. **Enhance Shipping Options**: Invest in faster shipping methods to attract customers willing to pay for convenience.
-5. **Leverage Segmentation Insights**: Use consumer and corporate segmentation to design more effective marketing campaigns.
+## **Recommendations**
+1. **Enhance Customer Retention**: Focus on personalized loyalty programs to increase retention beyond the current 14.27%.
+2. **Optimize Delivery Performance**: Improve delivery efficiency in underperforming regions to match the success of the Central and East regions.
+3. **Expand Product Marketing**: Promote high-demand categories like office supplies while exploring growth in furniture and technology.
+4. **Invest in Faster Shipping Options**: Introduce expedited and same-day shipping to improve customer experience and increase sales.
+5. **Leverage Segmentation**: Develop targeted campaigns for consumer and corporate segments based on behavior and preferences.
 
 ---
 
-## Conclusions
-- The analysis highlights significant opportunities to improve customer satisfaction, operational efficiency, and sales strategies.
-- Regional and segment-specific insights offer actionable pathways for targeted interventions.
-- Data-driven decisions will enable the business to adapt to customer needs, streamline operations, and maximize profitability.
+## **Conclusions**
+- The analysis identifies clear opportunities to improve sales, operational efficiency, and customer satisfaction through targeted interventions.
+- Regional and segmentation insights allow for more strategic resource allocation and marketing planning.
+- Data-driven decision-making will enable businesses to stay responsive to customer needs and streamline operations.
 
 ---
 
-## Link to Dashboard
-Explore the full interactive dashboard [here](https://app.powerbi.com/view?r=eyJrIjoiYWM1ZjJjN2MtOGUxNi00MDk1LWFlNjUtMWYwNTJjMmIwMGZkIiwidCI6IjUxN2QzNTAyLTI5MDEtNGRlMi1hODdiLTk1YzUwN2E5YTA4OCJ9).
+## **Project Tools & Techniques**
+### Tools Used:
+- **Power Query**: For data cleaning, transformation, and quality checks.
+- **Power BI**: For creating interactive dashboards and visual storytelling.
+- **Microsoft Excel**: For initial data exploration and analysis.
+
+### Techniques:
+- **DAX Measures**: Custom calculations for advanced metrics such as Retention Rate, On-Time Delivery etc.
+- **Data Visualization**: Leveraging Power BI's rich visualization capabilities to present insights clearly and interactively.
+
+---
+
+## **Dashboard Overview**
+Explore the interactive dashboards that provide detailed insights into the project's key findings:
+- **[Explore the Full Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYWM1ZjJjN2MtOGUxNi00MDk1LWFlNjUtMWYwNTJjMmIwMGZkIiwidCI6IjUxN2QzNTAyLTI5MDEtNGRlMi1hODdiLTk1YzUwN2E5YTA4OCJ9)**.
 
 ---
